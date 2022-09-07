@@ -366,6 +366,7 @@
 "Assets/Developers/Michael/CustomCursor.cs"
 "Assets/Developers/Michael/Item.cs"
 "Assets/Developers/Michael/Slot.cs"
+"Assets/Developers/Michael/WinManager.cs"
 -langversion:9.0
 
 /deterministic

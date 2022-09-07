@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CraftingManager : MonoBehaviour
 {
@@ -13,7 +14,16 @@ public class CraftingManager : MonoBehaviour
     public List<Item> itemList;
     public string[] recipes;
     public Item[] recipeResults;
+    public Item correctRecipe;
     public Slot resultSlot;
+    public static int winCount;
+    public GameObject button;
+
+    void Start()
+    {
+        correctRecipe = recipeResults[Random.Range(0,recipeResults.Length)];
+        button.SetActive(false);
+    }
 
     private void Update()
     {
@@ -71,6 +81,7 @@ public class CraftingManager : MonoBehaviour
                 resultSlot.gameObject.SetActive(true);
                 resultSlot.GetComponent<Image>().sprite = recipeResults[i].GetComponent<Image>().sprite;
                 resultSlot.item = recipeResults[i];
+                button.SetActive(true);
             }
         }
     }
@@ -93,5 +104,22 @@ public class CraftingManager : MonoBehaviour
             customCursor.sprite = currentItem.GetComponent<Image>().sprite;
         }
 
+    }
+
+    public void WinButton ()
+    {
+        if (correctRecipe == resultSlot.item && winCount < 2)
+        {
+            winCount++;
+         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+        else if (correctRecipe == resultSlot.item && winCount == 2)
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
+        else
+        {
+            Debug.Log("You Lose!");
+        }
     }
 }
