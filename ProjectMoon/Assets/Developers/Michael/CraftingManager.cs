@@ -18,6 +18,7 @@ public class CraftingManager : MonoBehaviour
     public Slot resultSlot;
     public static int winCount;
     public GameObject button;
+    private Vector2 scaleChange;
 
     void Start()
     {
@@ -46,6 +47,7 @@ public class CraftingManager : MonoBehaviour
                     }
                 }
                 nearestSlot.gameObject.SetActive(true);
+                nearestSlot.gameObject.transform.localScale = new Vector2(0.75f, 0.75f);
                 nearestSlot.GetComponent<Image>().sprite = currentItem.GetComponent<Image>().sprite;
                 nearestSlot.item = currentItem;
                 itemList[nearestSlot.index] = currentItem;

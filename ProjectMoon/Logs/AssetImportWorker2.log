@@ -1,0 +1,217 @@
+Using pre-set license
+Built from '2021.3/staging' branch; Version is '2021.3.8f1 (b30333d56e81) revision 11731763'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19043) 64bit Core' Language: 'en' Physical Memory: 7962 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2021.3.8f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker2
+-projectPath
+C:/Users/mikey/OneDrive/Desktop/CausalProject1/ProjectMoon2/ProjectMoon
+-logFile
+Logs/AssetImportWorker2.log
+-srvPort
+60714
+Successfully changed project path to: C:/Users/mikey/OneDrive/Desktop/CausalProject1/ProjectMoon2/ProjectMoon
+C:/Users/mikey/OneDrive/Desktop/CausalProject1/ProjectMoon2/ProjectMoon
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Refreshing native plugins compatible for Editor in 137.21 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.3.8f1 (b30333d56e81)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.8f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/mikey/OneDrive/Desktop/CausalProject1/ProjectMoon2/ProjectMoon/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1660 Ti with Max-Q Design (ID=0x2191)
+    Vendor:   NVIDIA
+    VRAM:     5991 MB
+    Driver:   30.0.15.1278
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.8f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.8f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.8f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56972
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.8f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.8f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.8f1/Editor/Data/PlaybackEngines/MetroSupport/UnityEditor.UWP.Extensions.dll
+Registered in 0.027359 seconds.
+Native extension for UWP target not found
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 136.57 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.456 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1457ms)
+		BeginReloadAssembly (175ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (1006ms)
+			LoadAssemblies (169ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (243ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (54ms)
+			SetupLoadedEditorAssemblies (593ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (136ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (137ms)
+				BeforeProcessingInitializeOnLoad (2ms)
+				ProcessInitializeOnLoadAttributes (221ms)
+				ProcessInitializeOnLoadMethodAttributes (96ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.013892 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for UWP target not found
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 1.12 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Package Manager log level set to [2]
+Mono: successfully reloaded assembly
+- Completed reload, in  2.191 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2193ms)
+		BeginReloadAssembly (346ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (11ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (150ms)
+		EndReloadAssembly (1604ms)
+			LoadAssemblies (190ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (355ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (88ms)
+			SetupLoadedEditorAssemblies (917ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (37ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (154ms)
+				ProcessInitializeOnLoadAttributes (441ms)
+				ProcessInitializeOnLoadMethodAttributes (266ms)
+				AfterProcessingInitializeOnLoad (17ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (8ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.08 seconds
+Refreshing native plugins compatible for Editor in 1.31 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2435 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 60 unused Assets / (56.5 KB). Loaded Objects now: 2873.
+Memory consumption went from 94.6 MB to 94.5 MB.
+Total: 13.473000 ms (FindLiveObjects: 0.421700 ms CreateObjectMapping: 0.380200 ms MarkObjects: 12.524300 ms  DeleteObjects: 0.145000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 46897.297338 seconds.
+  path: Assets/Developers/Michael/CraftingSprites/Poison.png
+  artifactKey: Guid(cd2a561e83e1f374db54903901c00392) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Developers/Michael/CraftingSprites/Poison.png using Guid(cd2a561e83e1f374db54903901c00392) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4d6d6e46f60ee28aefe73524f6bc08c7') in 0.135525 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/Developers/Michael/CraftingSprites/Crystal.png
+  artifactKey: Guid(75b2a5c3661393646af9dcc016f0684e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Developers/Michael/CraftingSprites/Crystal.png using Guid(75b2a5c3661393646af9dcc016f0684e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4df7a3d89d858469a86e7689d7a913b1') in 0.035507 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Developers/Michael/CraftingSprites/Bot.png
+  artifactKey: Guid(4276b44cac38dac4ca71ad3882e53e9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Developers/Michael/CraftingSprites/Bot.png using Guid(4276b44cac38dac4ca71ad3882e53e9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'da9bf628243620baab54e7acf1e19477') in 0.036969 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 20.338930 seconds.
+  path: Assets/Developers/Michael/CraftingSprites/Wood.png
+  artifactKey: Guid(af40c7d7e42c58e479bcdd8412621227) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Developers/Michael/CraftingSprites/Wood.png using Guid(af40c7d7e42c58e479bcdd8412621227) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7592d9178551c253360ad5a11db796db') in 0.087338 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.657115 seconds.
+  path: Assets/Developers/Michael/CraftingSprites/CraftingFrame.png
+  artifactKey: Guid(e52e81b4fc228db459108f2c9b02be6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Developers/Michael/CraftingSprites/CraftingFrame.png using Guid(e52e81b4fc228db459108f2c9b02be6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '62876d94e16de2518ba101c24c265f9f') in 0.033285 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.033040 seconds.
+  path: Assets/Developers/Michael/CraftingSprites/Bot.png
+  artifactKey: Guid(4276b44cac38dac4ca71ad3882e53e9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Developers/Michael/CraftingSprites/Bot.png using Guid(4276b44cac38dac4ca71ad3882e53e9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0bcb2b3c0b24e2059e18ae70ffe4449a') in 0.041444 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/Developers/Michael/CraftingSprites/Poison.png
+  artifactKey: Guid(cd2a561e83e1f374db54903901c00392) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Developers/Michael/CraftingSprites/Poison.png using Guid(cd2a561e83e1f374db54903901c00392) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '014cc4aa47828042110ff3de68cdd2f5') in 0.034967 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Developers/Michael/CraftingSprites/Demon.png
+  artifactKey: Guid(dad9aa7c69071604f8f91ab52cdb3823) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Developers/Michael/CraftingSprites/Demon.png using Guid(dad9aa7c69071604f8f91ab52cdb3823) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0628db6f7f58e8d93c39c3585b7d8da7') in 0.034157 seconds 
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
