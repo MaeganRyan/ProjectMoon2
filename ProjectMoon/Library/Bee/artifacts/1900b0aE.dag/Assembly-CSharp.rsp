@@ -362,11 +362,17 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.SpatialTracking.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.XR.LegacyInputHelpers.ref.dll"
+"Assets/Developers/Hyune/Scripts/AudioManager.cs"
+"Assets/Developers/Hyune/Scripts/Dialogue.cs"
+"Assets/Developers/Hyune/Scripts/DialogueSystem.cs"
+"Assets/Developers/Hyune/Scripts/DialogueTrigger.cs"
+"Assets/Developers/Hyune/Scripts/Speaker.cs"
 "Assets/Developers/Michael/CraftingManager.cs"
 "Assets/Developers/Michael/CustomCursor.cs"
 "Assets/Developers/Michael/Item.cs"
 "Assets/Developers/Michael/Slot.cs"
 "Assets/Developers/Michael/WinManager.cs"
+"Assets/DialogueCaster.cs"
 -langversion:9.0
 
 /deterministic
