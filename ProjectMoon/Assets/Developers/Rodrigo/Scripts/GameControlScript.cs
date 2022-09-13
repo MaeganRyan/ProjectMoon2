@@ -12,6 +12,7 @@ public class GameControlScript : MonoBehaviour
     //int isWoodSold;
     public GameObject wood;
 
+
     void Start(){
         moneyAmount = PlayerPrefs.GetInt("MoneyAmount");
         //isWoodSold = PlayerPrefs.GetInt ("IsWoodSold");
@@ -24,6 +25,8 @@ public class GameControlScript : MonoBehaviour
 
     void Update (){
         moneyText.text = "Money : " + moneyAmount.ToString() + "$";
+
+
     }
 
     public void gotoShop()
@@ -31,4 +34,10 @@ public class GameControlScript : MonoBehaviour
         PlayerPrefs.SetInt ("MoneyAmount", moneyAmount);
         SceneManager.LoadScene ("ShopScene");
     }
+
+    public void playGame()
+    {
+        SceneManager.LoadScene("SampleScene");
+    }
+
 }
