@@ -7,12 +7,18 @@ using TMPro;
 
 public class ShopControlScript : MonoBehaviour
 {
-    public int moneyAmount;
-    public int woodAmount;
-    public int botAmount;
-    public int crystalAmount;
-    public int poisonAmount;
-    public int scrollAmount;
+    public static int moneyAmount = 100;
+    public static int woodAmount = 10;
+    public static int botAmount = 10;
+    public static int crystalAmount = 10;
+    public static int poisonAmount = 10;
+    public static int scrollAmount = 10;
+    private int moneyTracker;
+    private int woodTracker;
+    private int crystalTracker;
+    private int botTracker;
+    private int poisonTracker;
+    private int scrollTracker;
 
     public TextMeshProUGUI moneyAmountText;
     public TextMeshProUGUI woodAmountText;
@@ -41,7 +47,13 @@ public class ShopControlScript : MonoBehaviour
 
     void Start()
     {
-        moneyAmount = PlayerPrefs.GetInt ("MoneyAmount");
+        CraftingManager.winCount = 0;
+        moneyTracker = moneyAmount;
+        woodTracker = woodAmount;
+        crystalTracker = crystalAmount;
+        botTracker = botAmount;
+        scrollTracker = scrollAmount;
+        poisonTracker = poisonAmount;
 
         objs = GameObject.FindGameObjectsWithTag("BuyButton");
 
@@ -50,7 +62,7 @@ public class ShopControlScript : MonoBehaviour
 
     void Update()
     {
-        moneyAmountText.text = "Money : " + moneyAmount.ToString() + "$";
+        moneyAmountText.text = "Money: $ " + moneyAmount.ToString();
 
         woodAmountText.text = "In Inventory : " + woodAmount.ToString();
         botAmountText.text = "In Inventory : " + botAmount.ToString();
@@ -147,13 +159,18 @@ public class ShopControlScript : MonoBehaviour
 
     public void exitShop()
     {
-        PlayerPrefs.SetInt ("MoneyAmount", moneyAmount);
-        SceneManager.LoadScene("GameScene");
+        //PlayerPrefs.SetInt ("MoneyAmount", moneyAmount);
+        SceneManager.LoadScene("SampleScene");
     }
 
     public void resetPlayerPrefs()
     {
-        moneyAmount = 0;
-        PlayerPrefs.DeleteAll();
+        moneyAmount = moneyTracker;
+        woodAmount = woodTracker;
+        crystalAmount = crystalTracker;
+        botAmount = botTracker;
+        scrollAmount = scrollTracker;
+        poisonAmount = poisonTracker;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

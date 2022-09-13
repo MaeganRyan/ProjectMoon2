@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class CraftingManager : MonoBehaviour
 {
+    public static CraftingManager instance;
     private Item currentItem;
     public Image customCursor;
 
@@ -20,9 +21,27 @@ public class CraftingManager : MonoBehaviour
     public GameObject button;
     private Vector2 scaleChange;
 
+    public Sprite cursorSprite;
+
+    public Item wood;
+
+    public GameObject loseText;
+
+    void Awake()
+    {
+         if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+        Destroy(this.gameObject);
+        }
+        correctRecipe = recipeResults[Random.Range(0,recipeResults.Length)];
+    }
     void Start()
     {
-        correctRecipe = recipeResults[Random.Range(0,recipeResults.Length)];
+        loseText.SetActive(false);
         button.SetActive(false);
     }
 
@@ -52,6 +71,8 @@ public class CraftingManager : MonoBehaviour
                 nearestSlot.item = currentItem;
                 itemList[nearestSlot.index] = currentItem;
                 currentItem = null;
+                customCursor.gameObject.SetActive(true);
+                customCursor.GetComponent<Image>().sprite = cursorSprite;
 
                 CheckForCreatedRecipes();
             }
@@ -90,6 +111,35 @@ public class CraftingManager : MonoBehaviour
 
     public void OnClickSlot(Slot slot)
     {
+        if (slot.item.tag == "Wood")
+        {
+            ShopControlScript.woodAmount ++;
+            Debug.Log(ShopControlScript.woodAmount);
+        }
+
+        if (slot.item.tag == "Crystal")
+        {
+            ShopControlScript.crystalAmount ++;
+            Debug.Log(ShopControlScript.crystalAmount);
+        }
+
+        if (slot.item.tag == "Bot")
+        {
+            ShopControlScript.botAmount ++;
+            Debug.Log(ShopControlScript.botAmount);
+        }
+
+        if (slot.item.tag == "Scroll")
+        {
+            ShopControlScript.scrollAmount ++;
+            Debug.Log(ShopControlScript.scrollAmount);
+        }
+
+        if (slot.item.tag == "Poison")
+        {
+            ShopControlScript.poisonAmount ++;
+            Debug.Log(ShopControlScript.poisonAmount);
+        }
         slot.item = null;
         itemList[slot.index] = null;
         slot.gameObject.SetActive(false);
@@ -106,6 +156,42 @@ public class CraftingManager : MonoBehaviour
             customCursor.sprite = currentItem.GetComponent<Image>().sprite;
         }
 
+        if (item.tag == "Wood")
+        {
+            Debug.Log("Wood!");
+            ShopControlScript.woodAmount --;
+            Debug.Log(ShopControlScript.woodAmount);
+        }
+
+        if (item.tag == "Crystal")
+        {
+            Debug.Log("Crystal!");
+            ShopControlScript.crystalAmount --;
+            Debug.Log(ShopControlScript.woodAmount);
+        }
+
+        if (item.tag == "Bot")
+        {
+            Debug.Log("Bot");
+            ShopControlScript.botAmount --;
+            Debug.Log(ShopControlScript.woodAmount);
+        }
+
+        if (item.tag == "Scroll")
+        {
+            Debug.Log("Scroll!");
+            ShopControlScript.scrollAmount --;
+            Debug.Log(ShopControlScript.scrollAmount);
+        }
+
+        if (item.tag == "Poison")
+        {
+            Debug.Log("Poison!");
+            ShopControlScript.poisonAmount --;
+            Debug.Log(ShopControlScript.poisonAmount);
+        }
+
+
     }
 
     public void WinButton ()
@@ -113,15 +199,17 @@ public class CraftingManager : MonoBehaviour
         if (correctRecipe == resultSlot.item && winCount < 2)
         {
             winCount++;
-         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            ShopControlScript.moneyAmount += 50;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
         else if (correctRecipe == resultSlot.item && winCount == 2)
         {
-            SceneManager.LoadScene("MainMenu");
+            ShopControlScript.moneyAmount += 50;
+            SceneManager.LoadScene("ShopScene");
         }
         else
         {
-            Debug.Log("You Lose!");
+            loseText.SetActive(true);
         }
     }
 }

@@ -8,7 +8,7 @@ using TMPro;
 public class GameControlScript : MonoBehaviour
 {
     public TextMeshProUGUI moneyText;
-    public static int moneyAmount;
+    public static int moneyAmount = 100;
     //int isWoodSold;
     public GameObject wood;
 

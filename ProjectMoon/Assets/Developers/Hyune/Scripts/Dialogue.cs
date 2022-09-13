@@ -8,7 +8,7 @@ using UnityEngine;
 [CreateAssetMenu]
 public class Dialogue : ScriptableObject
 {
-    [SerializeField] public List<Line> voiceLines;
+    [SerializeField] public List<Line> voiceLines = new List<Line>();
 }
 
 [System.Serializable]

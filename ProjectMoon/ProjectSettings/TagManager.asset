@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - BuyButton
+  - Wood
+  - Crystal
+  - Bot
+  - Scroll
+  - Poison
   layers:
   - Default
   - TransparentFX

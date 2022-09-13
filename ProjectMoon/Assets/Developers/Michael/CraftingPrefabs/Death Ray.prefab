@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 421f6ebaea5aa384f9bad4e6699cb990, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: Death Ray
 --- !u!114 &122706784454688804
 MonoBehaviour:
   m_ObjectHideFlags: 0
