@@ -16,7 +16,7 @@ public class inventoryText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        moneyAmountText.text = "Money: $ " + ShopControlScript.moneyAmount.ToString();
+        moneyAmountText.text = "Bank Account: $ " + ShopControlScript.moneyAmount.ToString();
         woodAmountText.text = "x " + ShopControlScript.woodAmount.ToString();
         botAmountText.text = "x " + ShopControlScript.botAmount.ToString();
         crystalAmountText.text = "x " + ShopControlScript.crystalAmount.ToString();

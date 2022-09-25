@@ -323,6 +323,7 @@
 "Assets/Developers/Hyune/Scripts/DialogueSystem.cs"
 "Assets/Developers/Hyune/Scripts/DialogueTrigger.cs"
 "Assets/Developers/Hyune/Scripts/Speaker.cs"
+"Assets/Developers/Michael/craftingInteractableManager.cs"
 "Assets/Developers/Michael/CraftingManager.cs"
 "Assets/Developers/Michael/CustomCursor.cs"
 "Assets/Developers/Michael/inventoryText.cs"

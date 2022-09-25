@@ -9,6 +9,8 @@ public class CraftingManager : MonoBehaviour
     public static CraftingManager instance;
     private Item currentItem;
     public Image customCursor;
+    public GameObject recipeBook;
+    private bool isPaused;
 
     public Slot[] craftingSlots;
 
@@ -27,6 +29,10 @@ public class CraftingManager : MonoBehaviour
 
     public GameObject loseText;
 
+    public static int levelCount = 0;
+
+    public static int loseCount = 0;
+
     void Awake()
     {
          if (instance == null)
@@ -37,7 +43,14 @@ public class CraftingManager : MonoBehaviour
         {
         Destroy(this.gameObject);
         }
-        correctRecipe = recipeResults[Random.Range(0,recipeResults.Length)];
+        if (levelCount < 5)
+        {
+        correctRecipe = recipeResults[Random.Range(0,recipeResults.Length-1)];
+        }
+        else
+        {
+            correctRecipe = recipeResults[7];
+        }
     }
     void Start()
     {
@@ -47,6 +60,26 @@ public class CraftingManager : MonoBehaviour
 
     private void Update()
     {
+
+        if(loseCount == 3)
+        {
+            SceneManager.LoadScene("LoseScene");
+        }
+
+        if(Input.GetKeyDown(KeyCode.P))
+        {
+            isPaused = !isPaused;
+        }
+
+        if (isPaused == true)
+        {
+            recipeBook.SetActive(true);
+        }
+        else
+        {
+            recipeBook.SetActive(false);
+        }
+
         if(Input.GetMouseButtonUp(0))
         {
             if(currentItem != null)
@@ -199,17 +232,21 @@ public class CraftingManager : MonoBehaviour
         if (correctRecipe == resultSlot.item && winCount < 2)
         {
             winCount++;
-            ShopControlScript.moneyAmount += 50;
+            ShopControlScript.moneyAmount += 100;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
-        else if (correctRecipe == resultSlot.item && winCount == 2)
+        else if (correctRecipe == resultSlot.item && winCount == 2 && levelCount < 5)
         {
-            ShopControlScript.moneyAmount += 50;
+            ShopControlScript.moneyAmount += 100;
             SceneManager.LoadScene("ShopScene");
+        }
+        else if (correctRecipe == resultSlot.item && levelCount > 5 && ShopControlScript.moneyAmount > 100)
+        {
+            SceneManager.LoadScene("WinScene");
         }
         else
         {
-            loseText.SetActive(true);
+            loseCount++;
         }
     }
 }

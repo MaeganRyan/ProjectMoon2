@@ -47,6 +47,8 @@ public class ShopControlScript : MonoBehaviour
 
     void Start()
     {
+        CraftingManager.loseCount = 0;
+        CraftingManager.levelCount++;
         CraftingManager.winCount = 0;
         moneyTracker = moneyAmount;
         woodTracker = woodAmount;

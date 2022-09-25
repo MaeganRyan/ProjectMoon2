@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Developers/Rodrigo/Scenes/ShopScene.unity
     guid: 2ed8d30cb0ee5cd4a8ccdacb172bb162
+  - enabled: 1
+    path: Assets/Scenes/WinScene.unity
+    guid: 414fbfce6da0eb94eae04cb4fcdc0ab2
+  - enabled: 1
+    path: Assets/Scenes/LoseScene.unity
+    guid: 27a5f999ec5b6bd46b12248b1265bdbb
   m_configObjects: {}

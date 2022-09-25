@@ -11,6 +11,7 @@ ScriptsOnlyBuild:
     - ShopControlScript
     - Slot
     - Speaker
+    - craftingInteractableManager
     - inventoryText
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridBrush
@@ -94,6 +95,12 @@ ScriptsOnlyBuild:
     methodName: OnMouseDownItem
   - assembly: Assembly-CSharp
     fullTypeName: CraftingManager
+    methodName: OnMouseDownItem
+  - assembly: Assembly-CSharp
+    fullTypeName: CraftingManager
+    methodName: OnMouseDownItem
+  - assembly: Assembly-CSharp
+    fullTypeName: CraftingManager
     methodName: OnClickSlot
   - assembly: Assembly-CSharp
     fullTypeName: CraftingManager
@@ -120,6 +127,9 @@ ScriptsOnlyBuild:
     fullTypeName: CraftingManager
     methodName: OnClickSlot
   - assembly: Assembly-CSharp
+    fullTypeName: CraftingManager
+    methodName: OnMouseDownItem
+  - assembly: Assembly-CSharp
     fullTypeName: ShopControlScript
     methodName: resetPlayerPrefs
   - assembly: Assembly-CSharp
@@ -141,7 +151,60 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
-    - Class: 89
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1608}
+    - Class: 114
+      Script: {instanceID: 2304}
+    - Class: 114
+      Script: {instanceID: 2574}
+    - Class: 114
+      Script: {instanceID: 2724}
+    - Class: 114
+      Script: {instanceID: 2976}
+    - Class: 114
+      Script: {instanceID: 4454}
+    - Class: 114
+      Script: {instanceID: 4654}
+    - Class: 114
+      Script: {instanceID: 5180}
+    - Class: 114
+      Script: {instanceID: 5294}
+    - Class: 114
+      Script: {instanceID: 5592}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    - Class: 225
+      Script: {instanceID: 0}
+    Assets/Scenes/LoseScene.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
@@ -150,24 +213,22 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1608}
     - Class: 114
-      Script: {instanceID: 2252}
+      Script: {instanceID: 2574}
     - Class: 114
-      Script: {instanceID: 2522}
+      Script: {instanceID: 2724}
     - Class: 114
-      Script: {instanceID: 2672}
+      Script: {instanceID: 4454}
     - Class: 114
-      Script: {instanceID: 2924}
+      Script: {instanceID: 4654}
     - Class: 114
-      Script: {instanceID: 4402}
+      Script: {instanceID: 5180}
     - Class: 114
-      Script: {instanceID: 4602}
+      Script: {instanceID: 5294}
     - Class: 114
-      Script: {instanceID: 5128}
-    - Class: 114
-      Script: {instanceID: 5242}
-    - Class: 114
-      Script: {instanceID: 5540}
+      Script: {instanceID: 5592}
     - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
@@ -200,8 +261,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
-    - Class: 89
-      Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 108
@@ -209,29 +268,29 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1608}
     - Class: 114
-      Script: {instanceID: 2120}
+      Script: {instanceID: 2172}
     - Class: 114
-      Script: {instanceID: 2214}
+      Script: {instanceID: 2266}
     - Class: 114
-      Script: {instanceID: 2522}
+      Script: {instanceID: 2574}
     - Class: 114
-      Script: {instanceID: 2672}
+      Script: {instanceID: 2724}
     - Class: 114
-      Script: {instanceID: 2924}
+      Script: {instanceID: 2976}
     - Class: 114
-      Script: {instanceID: 3754}
+      Script: {instanceID: 3806}
     - Class: 114
-      Script: {instanceID: 3976}
+      Script: {instanceID: 4028}
     - Class: 114
-      Script: {instanceID: 4402}
+      Script: {instanceID: 4454}
     - Class: 114
-      Script: {instanceID: 4602}
+      Script: {instanceID: 4654}
     - Class: 114
-      Script: {instanceID: 5128}
+      Script: {instanceID: 5180}
     - Class: 114
-      Script: {instanceID: 5242}
+      Script: {instanceID: 5294}
     - Class: 114
-      Script: {instanceID: 5540}
+      Script: {instanceID: 5592}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -274,39 +333,92 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1608}
     - Class: 114
-      Script: {instanceID: 2522}
+      Script: {instanceID: 2574}
     - Class: 114
-      Script: {instanceID: 2672}
+      Script: {instanceID: 2724}
     - Class: 114
-      Script: {instanceID: 2924}
+      Script: {instanceID: 2976}
     - Class: 114
-      Script: {instanceID: 3006}
+      Script: {instanceID: 3058}
     - Class: 114
-      Script: {instanceID: 3068}
+      Script: {instanceID: 3120}
     - Class: 114
-      Script: {instanceID: 3646}
+      Script: {instanceID: 3698}
     - Class: 114
-      Script: {instanceID: 4150}
+      Script: {instanceID: 4202}
     - Class: 114
-      Script: {instanceID: 4402}
+      Script: {instanceID: 4454}
     - Class: 114
-      Script: {instanceID: 4602}
+      Script: {instanceID: 4654}
     - Class: 114
-      Script: {instanceID: 4844}
+      Script: {instanceID: 4896}
     - Class: 114
-      Script: {instanceID: 5128}
+      Script: {instanceID: 5180}
     - Class: 114
-      Script: {instanceID: 5242}
+      Script: {instanceID: 5294}
     - Class: 114
-      Script: {instanceID: 5540}
+      Script: {instanceID: 5592}
     - Class: 114
-      Script: {instanceID: 5638}
+      Script: {instanceID: 5690}
     - Class: 114
-      Script: {instanceID: 6176}
+      Script: {instanceID: 6228}
     - Class: 114
-      Script: {instanceID: 6190}
+      Script: {instanceID: 6242}
     - Class: 114
-      Script: {instanceID: 6428}
+      Script: {instanceID: 6480}
+    - Class: 114
+      Script: {instanceID: 63524}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    - Class: 225
+      Script: {instanceID: 0}
+    Assets/Scenes/WinScene.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1608}
+    - Class: 114
+      Script: {instanceID: 2574}
+    - Class: 114
+      Script: {instanceID: 2724}
+    - Class: 114
+      Script: {instanceID: 4454}
+    - Class: 114
+      Script: {instanceID: 4654}
+    - Class: 114
+      Script: {instanceID: 5180}
+    - Class: 114
+      Script: {instanceID: 5294}
+    - Class: 114
+      Script: {instanceID: 5592}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1030,7 +1142,7 @@ ScriptsOnlyBuild:
     className: SignalTrack
   - hash:
       serializedVersion: 2
-      Hash: 0b22f2d51e04817929c23481cab8640e
+      Hash: 8417543b1d2d945d3ba81d3a45bc2fbb
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CraftingManager
@@ -1118,9 +1230,17 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: TouchInputModule
+  - hash:
+      serializedVersion: 2
+      Hash: 8ffb6c0fd97eaf4ddacf2b2229b5e889
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: craftingInteractableManager
   platform: 19
   scenePathNames:
   - Assets/Scenes/MainMenu.unity
   - Assets/Scenes/SampleScene.unity
   - Assets/Developers/Rodrigo/Scenes/ShopScene.unity
+  - Assets/Scenes/WinScene.unity
+  - Assets/Scenes/LoseScene.unity
   playerPath: C:/Users/mikey/OneDrive/Desktop/CausalProject1/ProjectMoon2/ProjectMoon/Builds/ProjectMoon.exe

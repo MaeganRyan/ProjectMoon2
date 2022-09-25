@@ -10,6 +10,9 @@ TagManager:
   - Bot
   - Scroll
   - Poison
+  - Stone
+  - Soul
+  - Money
   layers:
   - Default
   - TransparentFX
