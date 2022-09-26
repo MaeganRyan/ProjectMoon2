@@ -13,12 +13,16 @@ public class ShopControlScript : MonoBehaviour
     public static int crystalAmount = 10;
     public static int poisonAmount = 10;
     public static int scrollAmount = 10;
+    public static int soulAmount = 10;
+    public static int stoneAmount = 10;
     private int moneyTracker;
     private int woodTracker;
     private int crystalTracker;
     private int botTracker;
     private int poisonTracker;
     private int scrollTracker;
+    private int soulTracker;
+    private int stoneTracker;
 
     public TextMeshProUGUI moneyAmountText;
     public TextMeshProUGUI woodAmountText;
@@ -26,12 +30,17 @@ public class ShopControlScript : MonoBehaviour
     public TextMeshProUGUI crystalAmountText;
     public TextMeshProUGUI poisonAmountText;
     public TextMeshProUGUI scrollAmountText;
+    public TextMeshProUGUI soulAmountText;
+    public TextMeshProUGUI stoneAmountText;
 
     public Button button1;
     public Button button2;
     public Button button3;
     public Button button4;
     public Button button5;
+    public Button button6;
+    public Button button7;
+    public Button button8;
 
     public GameObject[] objs;
 
@@ -43,6 +52,9 @@ public class ShopControlScript : MonoBehaviour
         button3.onClick.AddListener(() => buttonCallBack(button3));
         button4.onClick.AddListener(() => buttonCallBack(button4));
         button5.onClick.AddListener(() => buttonCallBack(button5));
+        button6.onClick.AddListener(() => buttonCallBack(button6));
+        button7.onClick.AddListener(() => buttonCallBack(button7));
+        button8.onClick.AddListener(() => buttonCallBack(button8));
     }
 
     void Start()
@@ -56,6 +68,8 @@ public class ShopControlScript : MonoBehaviour
         botTracker = botAmount;
         scrollTracker = scrollAmount;
         poisonTracker = poisonAmount;
+        soulTracker = soulAmount;
+        stoneTracker = stoneAmount;
 
         objs = GameObject.FindGameObjectsWithTag("BuyButton");
 
@@ -71,6 +85,8 @@ public class ShopControlScript : MonoBehaviour
         crystalAmountText.text = "In Inventory : " + crystalAmount.ToString();
         poisonAmountText.text = "In Inventory : " + poisonAmount.ToString();
         scrollAmountText.text = "In Inventory : " + scrollAmount.ToString();
+        soulAmountText.text = "In Inventory : " + soulAmount.ToString();
+        stoneAmountText.text = "In Inventory : " + stoneAmount.ToString();
 
         EnableButton();       
     }
@@ -112,6 +128,27 @@ public class ShopControlScript : MonoBehaviour
         scrollAmount += 1;
         Debug.Log("Clicked: " + button5.name);
     }
+
+    if (buttonPressed == button6)
+    {
+        moneyAmount -= 30;
+        soulAmount += 1;
+        Debug.Log("Clicked: " + button6.name);
+    }
+
+    if (buttonPressed == button7)
+    {
+        moneyAmount -= 35;
+        stoneAmount += 1;
+        Debug.Log("Clicked: " + button7.name);
+    }
+
+    if (buttonPressed == button8)
+    {
+        moneyAmount -= 40;
+        scrollAmount += 1;
+        Debug.Log("Clicked: " + button8.name);
+    }
 }
 
     public void EnableButton() 
@@ -120,6 +157,24 @@ public class ShopControlScript : MonoBehaviour
 
         foreach (GameObject BuyButton in objs) 
         {
+            
+            if (moneyAmount >= 40)
+            {
+                GameObject.Find("BuyScroll").GetComponent<Button>().interactable = true;
+                Debug.Log("Clicked: " + button8.name);
+            }
+
+            if (moneyAmount >= 35)
+            {
+                GameObject.Find("BuyStone").GetComponent<Button>().interactable = true;
+                Debug.Log("Clicked: " + button7.name);
+            }
+
+            if (moneyAmount >= 30)
+            {
+                GameObject.Find("BuySoul").GetComponent<Button>().interactable = true;
+                Debug.Log("Clicked: " + button6.name);
+            }
 
             if (moneyAmount >= 25)
             {
@@ -173,6 +228,9 @@ public class ShopControlScript : MonoBehaviour
         botAmount = botTracker;
         scrollAmount = scrollTracker;
         poisonAmount = poisonTracker;
+        soulAmount = soulTracker;
+        stoneAmount = stoneTracker;
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
