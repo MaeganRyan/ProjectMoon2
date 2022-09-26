@@ -40,7 +40,6 @@ public class ShopControlScript : MonoBehaviour
     public Button button5;
     public Button button6;
     public Button button7;
-    public Button button8;
 
     public GameObject[] objs;
 
@@ -54,7 +53,6 @@ public class ShopControlScript : MonoBehaviour
         button5.onClick.AddListener(() => buttonCallBack(button5));
         button6.onClick.AddListener(() => buttonCallBack(button6));
         button7.onClick.AddListener(() => buttonCallBack(button7));
-        button8.onClick.AddListener(() => buttonCallBack(button8));
     }
 
     void Start()
@@ -143,12 +141,6 @@ public class ShopControlScript : MonoBehaviour
         Debug.Log("Clicked: " + button7.name);
     }
 
-    if (buttonPressed == button8)
-    {
-        moneyAmount -= 40;
-        scrollAmount += 1;
-        Debug.Log("Clicked: " + button8.name);
-    }
 }
 
     public void EnableButton() 
@@ -157,13 +149,6 @@ public class ShopControlScript : MonoBehaviour
 
         foreach (GameObject BuyButton in objs) 
         {
-            
-            if (moneyAmount >= 40)
-            {
-                GameObject.Find("BuyScroll").GetComponent<Button>().interactable = true;
-                Debug.Log("Clicked: " + button8.name);
-            }
-
             if (moneyAmount >= 35)
             {
                 GameObject.Find("BuyStone").GetComponent<Button>().interactable = true;
