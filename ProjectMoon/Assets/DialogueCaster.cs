@@ -3,35 +3,48 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public delegate void DialogueCast(Dialogue dia);
+public delegate void OnDialogueCast(Dialogue dia, int command);
 
 public class DialogueCaster : MonoBehaviour
 {
-    public static event DialogueCast dialogueCast;
-    private bool inDialogue = false;
-    public Speaker test;
-    public Dialogue current;
+    public static event OnDialogueCast OnDialogueCast;
+    //private bool inDialogue = false;
+
+    public Speaker CurrentVillain;
+
+    // Villain Name Tracker
+    public List<string> VillainNames = new List<string>();
+    public List<AudioClip> VillainVoices = new List<AudioClip>();
+
     void Start()
     {
-        DialogueSystem.dialogueDoneCaster += OnDialogueFinish;
+        DialogueSystem.OnDialogueFinish += OnDialogueFinish;
         Invoke("Cast",1f);
     }
 
     void OnDestroy()
     {
-        DialogueSystem.dialogueDoneCaster -= OnDialogueFinish;
+        DialogueSystem.OnDialogueFinish -= OnDialogueFinish;
     }
 
     void Cast()
     {
         Dialogue temp = (Dialogue)ScriptableObject.CreateInstance("Dialogue");
         Line templ = new Line();
-        templ.speaker = test;
+        CurrentVillain = (Speaker)ScriptableObject.CreateInstance("Speaker");
+
+        CurrentVillain._name = VillainNames[Random.Range(0, VillainNames.Count - 1)];
+
+        for (int i = 0; i < 3; i++)
+        {
+            CurrentVillain.voiceLines.Add(VillainVoices[Random.Range(0, VillainVoices.Count - 1)]);
+        }
+
+        templ.speaker = CurrentVillain;
         templ.line = "I need a " + CraftingManager.instance.correctRecipe.itemName;
         temp.voiceLines.Add(templ);
-        current = temp;
-        dialogueCast ?. Invoke(temp);
-        inDialogue = true;
+        OnDialogueCast?.Invoke(temp, 0);
+        //inDialogue = true;
     }
 
     // Update is called once per frame
@@ -48,6 +61,6 @@ public class DialogueCaster : MonoBehaviour
 
     void OnDialogueFinish()
     {
-        inDialogue = false;
+        //inDialogue = false;
     }
 }

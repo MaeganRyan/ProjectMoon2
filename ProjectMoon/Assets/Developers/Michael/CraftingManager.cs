@@ -4,13 +4,19 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+public delegate void OnItemSubmit(int command);
+
 public class CraftingManager : MonoBehaviour
 {
+    public static event OnItemSubmit OnItemSubmit;
+
     public static CraftingManager instance;
     private Item currentItem;
     public Image customCursor;
     public GameObject recipeBook;
     private bool isPaused;
+
+    private bool wait;
 
     public Slot[] craftingSlots;
 
@@ -56,6 +62,13 @@ public class CraftingManager : MonoBehaviour
     {
         loseText.SetActive(false);
         button.SetActive(false);
+
+        DialogueSystem.OnDialogueFinish += OnDialogueFinish;
+    }
+
+    private void OnDestroy()
+    {
+        DialogueSystem.OnDialogueFinish -= OnDialogueFinish;
     }
 
     private void Update()
@@ -229,24 +242,59 @@ public class CraftingManager : MonoBehaviour
 
     public void WinButton ()
     {
+        StartCoroutine(WinButtonCoroutine());
+    }
+
+    public IEnumerator WinButtonCoroutine()
+    {
         if (correctRecipe == resultSlot.item && winCount < 2)
         {
+            // Player Won
+
+            OnItemSubmit?.Invoke(0);
+            yield return (WaitForDialogueCallback());
+
             winCount++;
             ShopControlScript.moneyAmount += 100;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
         else if (correctRecipe == resultSlot.item && winCount == 2 && levelCount < 5)
         {
+            OnItemSubmit?.Invoke(0);
+            yield return (WaitForDialogueCallback());
+
             ShopControlScript.moneyAmount += 100;
             SceneManager.LoadScene("ShopScene");
         }
         else if (correctRecipe == resultSlot.item && levelCount > 5 && ShopControlScript.moneyAmount > 100)
         {
+            OnItemSubmit?.Invoke(0);
+            yield return (WaitForDialogueCallback());
+
             SceneManager.LoadScene("WinScene");
         }
         else
         {
+            // Player Lost
+            OnItemSubmit?.Invoke(1);
+            yield return (WaitForDialogueCallback());
+
             loseCount++;
+        }
+
+    }
+    public void OnDialogueFinish()
+    {
+        Debug.Log("Received Dialogue Callback");
+        wait = false;
+    }
+
+    public IEnumerator WaitForDialogueCallback()
+    {
+        wait = true;
+        while (wait)
+        {
+            yield return null;
         }
     }
 }

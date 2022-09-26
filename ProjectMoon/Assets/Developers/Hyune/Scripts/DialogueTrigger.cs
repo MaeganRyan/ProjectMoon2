@@ -21,12 +21,12 @@ public class DialogueTrigger : MonoBehaviour
 
     private void Start()
     {
-        DialogueSystem.dialogueDoneCaster += OnExitDialogue;
+        DialogueSystem.OnDialogueFinish += OnExitDialogue;
     }
 
     private void OnDestroy()
     {
-        DialogueSystem.dialogueDoneCaster -= OnExitDialogue;
+        DialogueSystem.OnDialogueFinish -= OnExitDialogue;
     }
 
     private void OnExitDialogue()

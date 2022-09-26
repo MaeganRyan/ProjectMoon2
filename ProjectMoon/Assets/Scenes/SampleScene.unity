@@ -166,10 +166,18 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 4155341894982025444, guid: ea2fd61637336fc418a1059098174fb6, type: 2}
+    - target: {fileID: 6596975804987896832, guid: bc33c5336f6a2a647becbbc552fc645d, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6596975804987896834, guid: bc33c5336f6a2a647becbbc552fc645d, type: 3}
       propertyPath: debug
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6596975804987896834, guid: bc33c5336f6a2a647becbbc552fc645d, type: 3}
+      propertyPath: currentCustomer
+      value: 
+      objectReference: {fileID: 11400000, guid: ef7ffcf11286f324294ddc67f6cdc0a3, type: 2}
     - target: {fileID: 6596975804987896835, guid: bc33c5336f6a2a647becbbc552fc645d, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -332,7 +340,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -1.7893982}
+  m_AnchoredPosition: {x: 0, y: -1.7894287}
   m_SizeDelta: {x: 0, y: -3.25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &84435168
@@ -2556,7 +2564,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.11625, y: 0.83100003}
   m_AnchorMax: {x: 0.18225001, y: 0.96332353}
-  m_AnchoredPosition: {x: 0.20318604, y: 0.117889404}
+  m_AnchoredPosition: {x: 0.203125, y: 0.117889404}
   m_SizeDelta: {x: 15.949699, y: 14.211}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1260529587
@@ -3305,7 +3313,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.7875001, y: 0.8166665}
   m_AnchorMax: {x: 0.9850001, y: 0.89400005}
-  m_AnchoredPosition: {x: -0.2999878, y: 0.49998474}
+  m_AnchoredPosition: {x: -0.2999878, y: 0.5}
   m_SizeDelta: {x: 2, y: 3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1383348395
@@ -4017,7 +4025,7 @@ GameObject:
   - component: {fileID: 1719091749}
   - component: {fileID: 1719091748}
   m_Layer: 0
-  m_Name: Word Caster
+  m_Name: DialogueCaster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4035,7 +4043,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f40ea013d9824d946bc589ca2472da55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  test: {fileID: 11400000, guid: ef7ffcf11286f324294ddc67f6cdc0a3, type: 2}
+  CurrentVillain: {fileID: 0}
+  VillainNames:
+  - Gru
+  - Joe
+  - Mama
+  - Popo
+  - Mumu
+  - Lala
+  - Zaza
+  - Candice
+  - Sugondese
+  - Slobbin
+  VillainVoices:
+  - {fileID: 8300000, guid: a186d6f7857630944ab6c8537f52a99c, type: 3}
+  - {fileID: 8300000, guid: 918688e9482de324b92f15cb9aa69465, type: 3}
+  - {fileID: 8300000, guid: 4899f1d1d5eb87345891a94f61e5609e, type: 3}
   current: {fileID: 0}
 --- !u!4 &1719091749
 Transform:

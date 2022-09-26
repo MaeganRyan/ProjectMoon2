@@ -4,11 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public delegate void DialogueCallback();
+public delegate void OnDialogueFinish();
 
 public class DialogueSystem : MonoBehaviour
 {
-    public static event DialogueCallback dialogueDoneCaster;
+    public static event OnDialogueFinish OnDialogueFinish;
+
+    public Speaker currentCustomer;
 
     // Accesses Dialogue S.O.
     public Dialogue currentDialogue;
@@ -29,38 +31,86 @@ public class DialogueSystem : MonoBehaviour
 
     private void Start()
     {
-        DialogueCaster.dialogueCast += OnDialogueCast;
+        DialogueCaster.OnDialogueCast += OnDialogueCast;
+        CraftingManager.OnItemSubmit += OnItemSubmit;
 
         voice = GetComponent<AudioSource>();
         textbox.SetActive(false);
     }
+    private void OnDestroy()
+    {
+        DialogueCaster.OnDialogueCast -= OnDialogueCast;
+        CraftingManager.OnItemSubmit -= OnItemSubmit;
+    }
 
     private void Update()
     {
-        if (debug && Input.GetKeyDown(KeyCode.E) && !inDialogue)
+        //if (debug && Input.GetKeyDown(KeyCode.E) && !inDialogue)
+        //{
+        //    ShowDialogue(currentDialogue);
+        //}
+    }
+
+
+    void OnItemSubmit(int command)
+    {
+        switch(command)
         {
-            ShowDialogue(currentDialogue);
+            case 0:
+                ShowRandomWin();
+                break;
+            case 1:
+                ShowRandomLose();
+                break;
         }
     }
 
-    private void OnDestroy()
+    void ShowRandomWin()
     {
-        DialogueCaster.dialogueCast -= OnDialogueCast;
+        Dialogue temp = (Dialogue)ScriptableObject.CreateInstance("Dialogue");
+        Line templ = new Line();
+        templ.speaker = currentCustomer;
+        templ.line = "Thank you so much!";
+        temp.voiceLines.Add(templ);
+
+        ShowDialogue(temp, 1);
+
+        //ShowDialogue(WinDialogue[Random.Range(0, WinDialogue.Count - 1)], 1);
     }
 
-    private void OnDialogueCast(Dialogue newDialogue)
+    void ShowRandomLose()
     {
-        ShowDialogue(newDialogue);
+        Dialogue temp = (Dialogue)ScriptableObject.CreateInstance("Dialogue");
+        Line templ = new Line();
+        templ.speaker = currentCustomer;
+        templ.line = "Bruh!";
+        temp.voiceLines.Add(templ);
+
+        ShowDialogue(temp, 1);
+
+        //ShowDialogue(LoseDialogue[Random.Range(0, LoseDialogue.Count - 1)], 1);
     }
 
-    void ShowDialogue(Dialogue newDialogue)
+    private void OnDialogueCast(Dialogue newDialogue, int command)
     {
-        StartCoroutine(DialogueWrapper(newDialogue));
+        StopAllCoroutines();
+        ShowDialogue(newDialogue, command);
+    }
+
+    // 0 = WaitLong, 1 = WaitForSeconds
+    void ShowDialogue(Dialogue newDialogue, int command)
+    {
+        StartCoroutine(DialogueWrapper(newDialogue, command));
     }
 
     // boss coroutine that tracks the completion of the entire task
-    public IEnumerator DialogueWrapper(Dialogue dialogue)
+    public IEnumerator DialogueWrapper(Dialogue dialogue, int command)
     {
+        // exit the previous dialogue loop
+        yield return Exit();
+        textbox.SetActive(false);
+        inDialogue = false;
+
         inDialogue = true;
 
         textbox.SetActive(true);
@@ -72,7 +122,17 @@ public class DialogueSystem : MonoBehaviour
         for (int i = 0; i < dialogue.voiceLines.Count; i++)
         {
             yield return PrintDialogue(currentDialogue.voiceLines[i]);
-            yield return WaitForInput();
+
+            if (command == 0)
+            {
+                currentCustomer = dialogue.voiceLines[0].speaker;
+                yield return WaitForInput();
+            }
+
+            else if (command == 1)
+            {
+                yield return WaitForSeconds();
+            }
         }
 
         // exit the dialogue loop
@@ -80,7 +140,11 @@ public class DialogueSystem : MonoBehaviour
 
         textbox.SetActive(false);
 
-        dialogueDoneCaster?.Invoke();
+        if (command == 1)
+        {
+            OnDialogueFinish?.Invoke();
+        }
+        
         inDialogue = false;
     }
 
@@ -204,6 +268,16 @@ public class DialogueSystem : MonoBehaviour
 
             yield return null;
         }
+    }
+
+    public IEnumerator WaitForSeconds()
+    {
+        yield return new WaitForSeconds(3);
+    }
+
+    public IEnumerator WaitLong()
+    {
+        yield return new WaitForSeconds(10000);
     }
 
     public IEnumerator Exit()
