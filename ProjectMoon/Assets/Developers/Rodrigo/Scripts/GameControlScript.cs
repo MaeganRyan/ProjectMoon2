@@ -24,7 +24,7 @@ public class GameControlScript : MonoBehaviour
     }
 
     void Update (){
-        moneyText.text = "Money : " + moneyAmount.ToString() + "$";
+    moneyText.text = "Money : " + moneyAmount.ToString() + "$";
 
 
     }
@@ -37,7 +37,16 @@ public class GameControlScript : MonoBehaviour
 
     public void playGame()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Play");
     }
 
+    public void quitGame()
+    {
+        Application.Quit();
+    }
+
+    public void enterLevel()
+    {
+        SceneManager.LoadScene("SampleScene");
+    }
 }

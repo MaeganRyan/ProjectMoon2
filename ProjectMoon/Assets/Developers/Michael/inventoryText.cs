@@ -12,15 +12,19 @@ public class inventoryText : MonoBehaviour
     public TextMeshProUGUI crystalAmountText;
     public TextMeshProUGUI poisonAmountText;
     public TextMeshProUGUI scrollAmountText;
+    public TextMeshProUGUI soulAmountText;
+    public TextMeshProUGUI stoneAmountText;
 
     // Update is called once per frame
     void Update()
     {
-        moneyAmountText.text = "Bank Account: $ " + ShopControlScript.moneyAmount.ToString();
+        moneyAmountText.text = "Bank Account: \n$ " + ShopControlScript.moneyAmount.ToString();
         woodAmountText.text = "x " + ShopControlScript.woodAmount.ToString();
         botAmountText.text = "x " + ShopControlScript.botAmount.ToString();
         crystalAmountText.text = "x " + ShopControlScript.crystalAmount.ToString();
         poisonAmountText.text = "x " + ShopControlScript.poisonAmount.ToString();
         scrollAmountText.text = "x " + ShopControlScript.scrollAmount.ToString();
+        soulAmountText.text = "x " + ShopControlScript.soulAmount.ToString();
+        stoneAmountText.text = "x " + ShopControlScript.stoneAmount.ToString();
     }
 }
