@@ -39,6 +39,10 @@ public class CraftingManager : MonoBehaviour
 
     public static int loseCount = 0;
 
+    public AudioSource audio;
+    public AudioClip correctSound;
+    public AudioClip incorrectSound;
+
     void Awake()
     {
          if (instance == null)
@@ -240,6 +244,9 @@ public class CraftingManager : MonoBehaviour
 
     }
 
+   
+
+
     public void WinButton ()
     {
         StartCoroutine(WinButtonCoroutine());
@@ -252,6 +259,7 @@ public class CraftingManager : MonoBehaviour
             // Player Won
 
             OnItemSubmit?.Invoke(0);
+            audio.PlayOneShot(correctSound);
             yield return (WaitForDialogueCallback());
 
             winCount++;

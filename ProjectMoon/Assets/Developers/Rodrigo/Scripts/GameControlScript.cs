@@ -18,13 +18,13 @@ public class GameControlScript : MonoBehaviour
         //isWoodSold = PlayerPrefs.GetInt ("IsWoodSold");
 
         //if (isWoodSold == 1)
-            wood.SetActive (true);
+            //wood.SetActive (true);
         //else
-            wood.SetActive (false);
+            //wood.SetActive (false);
     }
 
     void Update (){
-    moneyText.text = "Money : " + moneyAmount.ToString() + "$";
+    //moneyText.text = "Money : " + moneyAmount.ToString() + "$";
 
 
     }

@@ -732,7 +732,7 @@
                     "path": "<VirtualMouse>/leftButton",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Gamepad",
                     "action": "Click",
                     "isComposite": false,
                     "isPartOfComposite": false
