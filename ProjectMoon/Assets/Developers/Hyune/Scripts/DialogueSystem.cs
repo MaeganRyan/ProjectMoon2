@@ -32,7 +32,7 @@ public class DialogueSystem : MonoBehaviour
     private void Start()
     {
         DialogueCaster.OnDialogueCast += OnDialogueCast;
-        CraftingManager.OnItemSubmit += OnItemSubmit;
+        //CraftingManager.OnItemSubmit += OnItemSubmit;
 
         voice = GetComponent<AudioSource>();
         textbox.SetActive(false);
@@ -40,7 +40,7 @@ public class DialogueSystem : MonoBehaviour
     private void OnDestroy()
     {
         DialogueCaster.OnDialogueCast -= OnDialogueCast;
-        CraftingManager.OnItemSubmit -= OnItemSubmit;
+        //CraftingManager.OnItemSubmit -= OnItemSubmit;
     }
 
     private void Update()

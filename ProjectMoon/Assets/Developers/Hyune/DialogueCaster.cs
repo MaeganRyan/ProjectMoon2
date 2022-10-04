@@ -13,7 +13,6 @@ public class DialogueCaster : MonoBehaviour
     public Speaker CurrentVillain;
 
     // Villain Name Tracker
-    public List<string> VillainNames = new List<string>();
     public List<AudioClip> VillainVoices = new List<AudioClip>();
 
     void Start()
@@ -33,7 +32,7 @@ public class DialogueCaster : MonoBehaviour
         Line templ = new Line();
         CurrentVillain = (Speaker)ScriptableObject.CreateInstance("Speaker");
 
-        CurrentVillain._name = VillainNames[Random.Range(0, VillainNames.Count - 1)];
+        CurrentVillain._name = CustomerController.Instance.currentCustomer.ToString();
 
         for (int i = 0; i < 3; i++)
         {
@@ -41,7 +40,7 @@ public class DialogueCaster : MonoBehaviour
         }
 
         templ.speaker = CurrentVillain;
-        templ.line = "I need a " + CraftingManager.instance.correctRecipe.itemName;
+        //templ.line = "I need a " + CraftingManager.instance.correctRecipe.itemName;
         temp.voiceLines.Add(templ);
         OnDialogueCast?.Invoke(temp, 0);
         //inDialogue = true;
