@@ -15,9 +15,9 @@ MonoBehaviour:
   _name: 8
   sprite: {fileID: -1674893131, guid: b36935ac9f829694096303c6ca438f2e, type: 3}
   voiceLines:
-  - {fileID: 8300000, guid: a186d6f7857630944ab6c8537f52a99c, type: 3}
-  - {fileID: 8300000, guid: 918688e9482de324b92f15cb9aa69465, type: 3}
-  - {fileID: 8300000, guid: 4899f1d1d5eb87345891a94f61e5609e, type: 3}
+  - {fileID: 8300000, guid: 4bacdd413ab27e84bbdf558e5d43c637, type: 3}
+  - {fileID: 8300000, guid: e929846173e5fc2419bd35c50b39a11b, type: 3}
+  - {fileID: 8300000, guid: 2261f6048debfc74ea613715bbff7fdf, type: 3}
   needLine: It's time. Give me
   thankLine: Nice. I'll be seeing you next week.
   wrongLine: Are you daft? I said

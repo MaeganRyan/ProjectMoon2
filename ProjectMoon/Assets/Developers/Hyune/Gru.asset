@@ -15,10 +15,10 @@ MonoBehaviour:
   _name: 1
   sprite: {fileID: 1017260088, guid: b36935ac9f829694096303c6ca438f2e, type: 3}
   voiceLines:
-  - {fileID: 8300000, guid: a186d6f7857630944ab6c8537f52a99c, type: 3}
-  - {fileID: 8300000, guid: 918688e9482de324b92f15cb9aa69465, type: 3}
-  - {fileID: 8300000, guid: 4899f1d1d5eb87345891a94f61e5609e, type: 3}
-  needLine: Moon Moon GOURLS Steal the moon I need a
-  thankLine: GOURLS, you read that in my voice ;)
-  wrongLine: Moon moon, not that, I need a
+  - {fileID: 8300000, guid: e767bceebff9c194f88529d7ae205804, type: 3}
+  - {fileID: 8300000, guid: 95c532d7d62c4a6449e9d5facac6b105, type: 3}
+  - {fileID: 8300000, guid: 837d77109cb978d40a694693a92afa6b, type: 3}
+  needLine: Moon Moon GORLS Moon Moon
+  thankLine: GORLS (you read that in my voice)
+  wrongLine: Moon moon, MOON
   angerLine: ... :(

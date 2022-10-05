@@ -15,9 +15,9 @@ MonoBehaviour:
   _name: 4
   sprite: {fileID: 340077516, guid: b36935ac9f829694096303c6ca438f2e, type: 3}
   voiceLines:
-  - {fileID: 8300000, guid: a186d6f7857630944ab6c8537f52a99c, type: 3}
-  - {fileID: 8300000, guid: 918688e9482de324b92f15cb9aa69465, type: 3}
-  - {fileID: 8300000, guid: 4899f1d1d5eb87345891a94f61e5609e, type: 3}
+  - {fileID: 8300000, guid: df8a7d2cf6c4fd145b5abec0ea2fe753, type: 3}
+  - {fileID: 8300000, guid: e49ac6b32632825418be264456fe916f, type: 3}
+  - {fileID: 8300000, guid: df2ccdf1e7dab964fb8ece182bd81f8d, type: 3}
   needLine: We require a
   thankLine: Thank you
   wrongLine: No, we requested a

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7807000010918787460}
   - component: {fileID: 7807000010918787459}
   - component: {fileID: 7807000010918787461}
+  - component: {fileID: 1375621952}
   m_Layer: 5
   m_Name: Customer
   m_TagString: Untagged
@@ -26,7 +27,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7807000010918787457}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.41666666, y: 0.41666666, z: 0.41666666}
   m_ConstrainProportionsScale: 0
@@ -97,3 +98,26 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1375621952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7807000010918787457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be90856305bc67d428f2179e5943ef27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  customers:
+  - {fileID: 11400000, guid: 02dd1912b526bb74e8ec336e3dd5614c, type: 2}
+  - {fileID: 11400000, guid: 4df3d3943146b7a4b88ca1759b4ce379, type: 2}
+  - {fileID: 11400000, guid: 46c68962c3128e24b8b589622760be16, type: 2}
+  - {fileID: 11400000, guid: a861b68dba8253d4f8b8d9d4ff00b450, type: 2}
+  - {fileID: 11400000, guid: ef3605510367b034496644687d5899d7, type: 2}
+  - {fileID: 11400000, guid: 48d7f306b89b90d4194c5f765e13e93f, type: 2}
+  - {fileID: 11400000, guid: bccdfd88a10ba7544944d949d5a58f00, type: 2}
+  - {fileID: 11400000, guid: 671c4f4dd093efd48b8d7ddf4f1dbc3e, type: 2}
+  landlord: {fileID: 11400000, guid: 99003fe26a73afa4888abcb3926b40dd, type: 2}
+  currentCustomer: {fileID: 0}

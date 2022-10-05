@@ -7,12 +7,12 @@ public enum Customers
     Robot = 0,
     Gru,
     WingedDude,
-    Joker,
-    Gnome,
+    Skeleton,
+    Gnomes,
     Scientist,
     Pumpkin,
     Grass,
-    FatDude
+    Landlord
 }
 
 [CreateAssetMenu]

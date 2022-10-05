@@ -15,9 +15,9 @@ MonoBehaviour:
   _name: 0
   sprite: {fileID: -415391125, guid: b36935ac9f829694096303c6ca438f2e, type: 3}
   voiceLines:
-  - {fileID: 8300000, guid: a186d6f7857630944ab6c8537f52a99c, type: 3}
-  - {fileID: 8300000, guid: 918688e9482de324b92f15cb9aa69465, type: 3}
-  - {fileID: 8300000, guid: 4899f1d1d5eb87345891a94f61e5609e, type: 3}
+  - {fileID: 8300000, guid: 50cf64aaad06ea4439fea40f123fe7c0, type: 3}
+  - {fileID: 8300000, guid: fcd0316baef80334c944864929f74d24, type: 3}
+  - {fileID: 8300000, guid: 7ad4ae78307637c4fa2da97c8383b600, type: 3}
   needLine: HUMAN, PLEASE CONSTRUCT FOR ME A
   thankLine: THANK YOU, HUMAN
   wrongLine: USER ERROR, RECEIVED TRASH, EXPECTED A

@@ -13,8 +13,12 @@ MonoBehaviour:
   m_Name: Winged Dude
   m_EditorClassIdentifier: 
   _name: 2
-  sprite: {fileID: 0}
-  voiceLines: []
-  needLine: 
-  thankLine: 
-  angerLine: 
+  sprite: {fileID: -239834571, guid: b36935ac9f829694096303c6ca438f2e, type: 3}
+  voiceLines:
+  - {fileID: 8300000, guid: 93753273e0ffdd94794a60ba2142ae9d, type: 3}
+  - {fileID: 8300000, guid: 4f85bb2120a2bbf48804a543cbce95db, type: 3}
+  - {fileID: 8300000, guid: 3233f40171ba76d44ac7c0ca6e253a82, type: 3}
+  needLine: Yo, what up bro? I know I am. I need a
+  thankLine: Thanks man, up top!
+  wrongLine: You've got it twisted, I said I need a
+  angerLine: That's not gonna fly, bro

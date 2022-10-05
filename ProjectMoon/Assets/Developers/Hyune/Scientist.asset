@@ -15,9 +15,9 @@ MonoBehaviour:
   _name: 5
   sprite: {fileID: -102644063, guid: b36935ac9f829694096303c6ca438f2e, type: 3}
   voiceLines:
-  - {fileID: 8300000, guid: a186d6f7857630944ab6c8537f52a99c, type: 3}
-  - {fileID: 8300000, guid: 918688e9482de324b92f15cb9aa69465, type: 3}
-  - {fileID: 8300000, guid: 4899f1d1d5eb87345891a94f61e5609e, type: 3}
+  - {fileID: 8300000, guid: 6fecc4b7faffacc4da43de5455279e7e, type: 3}
+  - {fileID: 8300000, guid: 47eb8ba613bf4e34aa9bf26106fea228, type: 3}
+  - {fileID: 8300000, guid: 1fb0d0b15db9c1c429809fdfc11b6a9a, type: 3}
   needLine: 'Hello! I require your finest '
   thankLine: Have a wonderful day sir!
   wrongLine: My kind sir, that's not what I asked for. I asked for a

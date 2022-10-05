@@ -15,9 +15,9 @@ MonoBehaviour:
   _name: 7
   sprite: {fileID: 326947311, guid: b36935ac9f829694096303c6ca438f2e, type: 3}
   voiceLines:
-  - {fileID: 8300000, guid: a186d6f7857630944ab6c8537f52a99c, type: 3}
-  - {fileID: 8300000, guid: 918688e9482de324b92f15cb9aa69465, type: 3}
-  - {fileID: 8300000, guid: 4899f1d1d5eb87345891a94f61e5609e, type: 3}
+  - {fileID: 8300000, guid: 24a360c9d55e6de40aadf5401e22a0de, type: 3}
+  - {fileID: 8300000, guid: 0922f26906cdd62449b46cf5c1a5bab5, type: 3}
+  - {fileID: 8300000, guid: 7b559da1b16799541a2b7985ebbc5c3f, type: 3}
   needLine: Please. I need a
   thankLine: They told me to touch grass
   wrongLine: Please man, I didn't ask for that. I asked for a

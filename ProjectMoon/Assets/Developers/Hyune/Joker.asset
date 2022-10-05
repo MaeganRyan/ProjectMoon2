@@ -15,10 +15,10 @@ MonoBehaviour:
   _name: 3
   sprite: {fileID: -101410536, guid: b36935ac9f829694096303c6ca438f2e, type: 3}
   voiceLines:
-  - {fileID: 8300000, guid: a186d6f7857630944ab6c8537f52a99c, type: 3}
-  - {fileID: 8300000, guid: 918688e9482de324b92f15cb9aa69465, type: 3}
-  - {fileID: 8300000, guid: 4899f1d1d5eb87345891a94f61e5609e, type: 3}
-  needLine: Yo, what's poppin' broski, give me your finest
-  thankLine: Have a totally tubular day, home slice, bread slice dawg.
-  wrongLine: Yo that's totally not radical bro, I said that I need a
+  - {fileID: 8300000, guid: 151e9854034435945a5216c698defb51, type: 3}
+  - {fileID: 8300000, guid: fa01bda67a37e86459c97664bd22d264, type: 3}
+  - {fileID: 8300000, guid: c365ba2a34ce9e246b37051e16a1d249, type: 3}
+  needLine: Yo, what's poppin' buddy chum pal, give me your finest
+  thankLine: Have a totally tubular day, home slice, bread slice; dawg.
+  wrongLine: Yo that's totally not nice buddy, I said that I need a
   angerLine: Bruh.
