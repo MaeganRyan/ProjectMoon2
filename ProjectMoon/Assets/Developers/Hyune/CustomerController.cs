@@ -4,37 +4,43 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public enum Customers
-{ 
-    Robot = 0,
-    Gru,
-    WingedDude,
-    Joker,
-    Gnome,
-    Scientist,
-    Pumpkin,
-    Grass,
-    FatDude
-}
+public delegate void OnCustomerEnterComplete();
 
 public class CustomerController : MonoBehaviour
 {
     public static CustomerController Instance;
-    public Customers currentCustomer;
-    [SerializeField] private List<Sprite> characterSprites = new List<Sprite>();
+    public static event OnCustomerEnterComplete onCustomerEnterComplete;
+
+    [SerializeField] private List<Customer> customers = new List<Customer>();
+    [SerializeField]private Customer landlord;
+
+    [HideInInspector] public Customer currentCustomer;
     private Image characterSprite;
+
     private Animator anim;
 
-    // Creates Singleton
-    private void Awake()
+
+    // Start Day Loop
+    private void Start()
     {
-        if(Instance == null)
+        if (Instance == null)
         {
             Instance = this;
-            currentCustomer = (Customers)Random.Range(0, 8);
+            if (CustomerTracker.Instance.tracker < CustomerTracker.Instance.winAmount)
+            {
+                //currentCustomer = customers[2];
+                currentCustomer = customers[Random.Range(0, customers.Count - 1)];
+            }
+            else
+            {
+                currentCustomer = landlord;
+            }
+
             characterSprite = GetComponent<Image>();
-            characterSprite.sprite = characterSprites[(int)currentCustomer];
+            characterSprite.sprite = currentCustomer.sprite;
             anim = GetComponent<Animator>();
+            PlayEnterAnimation();
+            CraftingManager.OnItemSubmit += PlayExitAnimation;
         }
     }
 
@@ -42,19 +48,20 @@ public class CustomerController : MonoBehaviour
     private void OnDestroy()
     {
         Instance = null;
+        CraftingManager.OnItemSubmit -= PlayExitAnimation;
     }
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            PlayEnterAnimation();
-        }
+        //if(Input.GetKeyDown(KeyCode.Alpha1))
+        //{
+        //    PlayEnterAnimation();
+        //}
 
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            PlayExitAnimation();
-        }
+        //if (Input.GetKeyDown(KeyCode.Alpha2))
+        //{
+        //    PlayExitAnimation();
+        //}
 
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
@@ -62,13 +69,21 @@ public class CustomerController : MonoBehaviour
         }
     }
 
+    public void OnCustomerEnterComplete()
+    {
+        onCustomerEnterComplete?.Invoke();
+    }
+
     public void PlayEnterAnimation()
     {
         anim.SetTrigger("Enter");
     }
 
-    public void PlayExitAnimation()
+    public void PlayExitAnimation(int command)
     {
-        anim.SetTrigger("Exit");
+        if (command == 1 || command == 0)
+        { 
+            anim.SetTrigger("Exit");
+        }
     }
 }

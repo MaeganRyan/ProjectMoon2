@@ -7,7 +7,7 @@ using TMPro;
 
 public class ShopControlScript : MonoBehaviour
 {
-    public static int moneyAmount = 100;
+    public static int moneyAmount = 1000;
     public static int woodAmount = 10;
     public static int botAmount = 10;
     public static int crystalAmount = 10;
@@ -72,6 +72,18 @@ public class ShopControlScript : MonoBehaviour
         objs = GameObject.FindGameObjectsWithTag("BuyButton");
 
         //EnableButton();
+    }
+
+    public static void ResetGame()
+    {
+        moneyAmount = 100;
+        woodAmount = 10;
+        botAmount = 10;
+        crystalAmount = 10;
+        poisonAmount = 10;
+        scrollAmount = 10;
+        soulAmount = 10;
+        stoneAmount = 10;
     }
 
     void Update()

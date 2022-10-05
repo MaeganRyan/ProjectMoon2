@@ -40,6 +40,11 @@ public class GameControlScript : MonoBehaviour
         SceneManager.LoadScene("Play");
     }
 
+    public void mainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
     public void quitGame()
     {
         Application.Quit();

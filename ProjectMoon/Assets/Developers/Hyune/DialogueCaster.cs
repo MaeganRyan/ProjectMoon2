@@ -10,38 +10,30 @@ public class DialogueCaster : MonoBehaviour
     public static event OnDialogueCast OnDialogueCast;
     //private bool inDialogue = false;
 
-    public Speaker CurrentVillain;
-
-    // Villain Name Tracker
-    public List<AudioClip> VillainVoices = new List<AudioClip>();
+    public Customer CurrentVillain;
 
     void Start()
     {
         DialogueSystem.OnDialogueFinish += OnDialogueFinish;
-        Invoke("Cast",1f);
+        CustomerController.onCustomerEnterComplete += Cast;
     }
 
     void OnDestroy()
     {
         DialogueSystem.OnDialogueFinish -= OnDialogueFinish;
+        CustomerController.onCustomerEnterComplete -= Cast;
     }
 
     void Cast()
     {
         Dialogue temp = (Dialogue)ScriptableObject.CreateInstance("Dialogue");
         Line templ = new Line();
-        CurrentVillain = (Speaker)ScriptableObject.CreateInstance("Speaker");
-
-        CurrentVillain._name = CustomerController.Instance.currentCustomer.ToString();
-
-        for (int i = 0; i < 3; i++)
-        {
-            CurrentVillain.voiceLines.Add(VillainVoices[Random.Range(0, VillainVoices.Count - 1)]);
-        }
+        CurrentVillain = CustomerController.Instance.currentCustomer;
 
         templ.speaker = CurrentVillain;
-        //templ.line = "I need a " + CraftingManager.instance.correctRecipe.itemName;
+        templ.line = CurrentVillain.needLine + " " + CraftingManager.instance.correctRecipe.itemName;
         temp.voiceLines.Add(templ);
+
         OnDialogueCast?.Invoke(temp, 0);
         //inDialogue = true;
     }

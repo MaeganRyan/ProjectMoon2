@@ -14,6 +14,6 @@ public class Dialogue : ScriptableObject
 [System.Serializable]
 public class Line
 {
-    public Speaker speaker;
+    public Customer speaker;
     public string line = "";
 }

@@ -10,7 +10,7 @@ public class DialogueSystem : MonoBehaviour
 {
     public static event OnDialogueFinish OnDialogueFinish;
 
-    public Speaker currentCustomer;
+    public Customer currentCustomer;
 
     // Accesses Dialogue S.O.
     public Dialogue currentDialogue;
@@ -32,7 +32,7 @@ public class DialogueSystem : MonoBehaviour
     private void Start()
     {
         DialogueCaster.OnDialogueCast += OnDialogueCast;
-        //CraftingManager.OnItemSubmit += OnItemSubmit;
+        CraftingManager.OnItemSubmit += OnItemSubmit;
 
         voice = GetComponent<AudioSource>();
         textbox.SetActive(false);
@@ -40,7 +40,7 @@ public class DialogueSystem : MonoBehaviour
     private void OnDestroy()
     {
         DialogueCaster.OnDialogueCast -= OnDialogueCast;
-        //CraftingManager.OnItemSubmit -= OnItemSubmit;
+        CraftingManager.OnItemSubmit -= OnItemSubmit;
     }
 
     private void Update()
@@ -57,20 +57,36 @@ public class DialogueSystem : MonoBehaviour
         switch(command)
         {
             case 0:
-                ShowRandomWin();
+                ShowWin();
                 break;
             case 1:
-                ShowRandomLose();
+                ShowLose();
+                break;
+            case 2:
+                ShowError();
                 break;
         }
     }
 
-    void ShowRandomWin()
+    void ShowError()
     {
+        StopAllCoroutines();
         Dialogue temp = (Dialogue)ScriptableObject.CreateInstance("Dialogue");
         Line templ = new Line();
         templ.speaker = currentCustomer;
-        templ.line = "Thank you so much!";
+        templ.line = currentCustomer.wrongLine + " " + CraftingManager.instance.correctRecipe.itemName;
+        temp.voiceLines.Add(templ);
+
+        ShowDialogue(temp, 0);
+    }
+
+    void ShowWin()
+    {
+        StopAllCoroutines();
+        Dialogue temp = (Dialogue)ScriptableObject.CreateInstance("Dialogue");
+        Line templ = new Line();
+        templ.speaker = currentCustomer;
+        templ.line = currentCustomer.thankLine;
         temp.voiceLines.Add(templ);
 
         ShowDialogue(temp, 1);
@@ -78,12 +94,13 @@ public class DialogueSystem : MonoBehaviour
         //ShowDialogue(WinDialogue[Random.Range(0, WinDialogue.Count - 1)], 1);
     }
 
-    void ShowRandomLose()
+    void ShowLose()
     {
+        StopAllCoroutines();
         Dialogue temp = (Dialogue)ScriptableObject.CreateInstance("Dialogue");
         Line templ = new Line();
         templ.speaker = currentCustomer;
-        templ.line = "Bruh!";
+        templ.line = currentCustomer.angerLine;
         temp.voiceLines.Add(templ);
 
         ShowDialogue(temp, 1);
@@ -131,7 +148,7 @@ public class DialogueSystem : MonoBehaviour
 
             else if (command == 1)
             {
-                yield return WaitForSeconds();
+                yield return WaitForSeconds(3);
             }
         }
 
@@ -151,7 +168,7 @@ public class DialogueSystem : MonoBehaviour
     public IEnumerator PrintDialogue(Line newLine)
     {
         // set it equal to currentLine
-        if (newLine.speaker._name != "")
+        if (newLine.speaker._name.ToString() != "")
         {
             currentLine = newLine.speaker._name + ": " + newLine.line;
         }
@@ -168,7 +185,7 @@ public class DialogueSystem : MonoBehaviour
         var textInfo = textComponent.textInfo;
 
         // Define color for the speaker and :
-        for (int i = 0; i < newLine.speaker._name.Length; ++i)
+        for (int i = 0; i < newLine.speaker._name.ToString().Length; ++i)
         {
             var charInfo = textInfo.characterInfo[i];
 
@@ -199,7 +216,7 @@ public class DialogueSystem : MonoBehaviour
         }
 
         // Define color for all
-        for (int i = newLine.speaker._name.Length; i < textInfo.characterCount; ++i)
+        for (int i = newLine.speaker._name.ToString().Length; i < textInfo.characterCount; ++i)
         {
             var charInfo = textInfo.characterInfo[i];
 
@@ -270,9 +287,9 @@ public class DialogueSystem : MonoBehaviour
         }
     }
 
-    public IEnumerator WaitForSeconds()
+    public IEnumerator WaitForSeconds(float seconds)
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(seconds);
     }
 
     public IEnumerator WaitLong()
