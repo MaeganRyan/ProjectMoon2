@@ -298,7 +298,7 @@
                 },
                 {
                     "name": "Click",
-                    "type": "PassThrough",
+                    "type": "Button",
                     "id": "1d1835b9-21e7-4dc8-b93e-57d9305c9bc7",
                     "expectedControlType": "Button",
                     "processors": "",
@@ -624,17 +624,6 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "Navigate",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "82627dcc-3b13-4ba9-841d-e4b746d6553e",
-                    "path": "*/{Cancel}",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse;Gamepad;Touch;Joystick;XR",
-                    "action": "Cancel",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

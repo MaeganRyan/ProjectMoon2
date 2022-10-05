@@ -45,6 +45,8 @@ public class CraftingManager : MonoBehaviour
     public AudioClip correctSound;
     public AudioClip incorrectSound;
 
+    public float CooldownTime = 0f;
+
     void Awake()
     {
          if (instance == null)
@@ -79,15 +81,18 @@ public class CraftingManager : MonoBehaviour
 
     private void Update()
     {
+        CooldownTime -= Time.deltaTime;
 
         if(loseCount == 3)
         {
             SceneManager.LoadScene("LoseScene");
         }
 
-        if(Input.GetKeyDown(KeyCode.P))
+        if(Gamepad.current.startButton.wasPressedThisFrame && CooldownTime <= 0f)
         {
             isPaused = !isPaused;
+            CooldownTime = 1.0f;
+            Debug.Log("Menu press");
         }
 
         if (isPaused == true)
@@ -217,7 +222,7 @@ public class CraftingManager : MonoBehaviour
         if(currentItem == null)
         {
             currentItem = item;
-            customCursor.gameObject.SetActive(true);
+            //customCursor.gameObject.SetActive(true);
             customCursor.sprite = currentItem.GetComponent<Image>().sprite;
             Debug.Log("Is this working");
         }
