@@ -37,6 +37,7 @@ public class CustomerTracker : MonoBehaviour
             if (tracker == 0)
             {
                 ShopControlScript.ResetGame();
+                CraftingManager.ResetGame();
             }
 
             tracker++;

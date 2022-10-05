@@ -142,6 +142,11 @@ public class CraftingManager : MonoBehaviour
         }
     }
 
+    public static void ResetGame()
+    {
+        loseCount = 0;
+    }
+
     bool CheckIfHasItem(Item item)
     {
         if (item.tag == "Wood" && ShopControlScript.woodAmount > 0)
