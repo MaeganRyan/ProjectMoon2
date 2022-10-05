@@ -3703,6 +3703,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cursor Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4182004553054478343, guid: 78797e5ea2b9cf643913e7be465202f4, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4182004553054478344, guid: 78797e5ea2b9cf643913e7be465202f4, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5325631
@@ -4401,6 +4405,83 @@ RectTransform:
   m_AnchoredPosition: {x: -275, y: -138}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1001 &1337311990
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 150512166945608976, guid: a0a8ffc116b430b4b8e5d38a4796524e, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 1002980444}
+    - target: {fileID: 150512166945608976, guid: a0a8ffc116b430b4b8e5d38a4796524e, type: 3}
+      propertyPath: cursorTransform
+      value: 
+      objectReference: {fileID: 1002980446}
+    - target: {fileID: 150512166945608976, guid: a0a8ffc116b430b4b8e5d38a4796524e, type: 3}
+      propertyPath: canvasRectTransform
+      value: 
+      objectReference: {fileID: 1002980445}
+    - target: {fileID: 150512166945608977, guid: a0a8ffc116b430b4b8e5d38a4796524e, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 150512166945608977, guid: a0a8ffc116b430b4b8e5d38a4796524e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 698.9683
+      objectReference: {fileID: 0}
+    - target: {fileID: 150512166945608977, guid: a0a8ffc116b430b4b8e5d38a4796524e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 297.58762
+      objectReference: {fileID: 0}
+    - target: {fileID: 150512166945608977, guid: a0a8ffc116b430b4b8e5d38a4796524e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.403302
+      objectReference: {fileID: 0}
+    - target: {fileID: 150512166945608977, guid: a0a8ffc116b430b4b8e5d38a4796524e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 150512166945608977, guid: a0a8ffc116b430b4b8e5d38a4796524e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 150512166945608977, guid: a0a8ffc116b430b4b8e5d38a4796524e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 150512166945608977, guid: a0a8ffc116b430b4b8e5d38a4796524e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 150512166945608977, guid: a0a8ffc116b430b4b8e5d38a4796524e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 150512166945608977, guid: a0a8ffc116b430b4b8e5d38a4796524e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 150512166945608977, guid: a0a8ffc116b430b4b8e5d38a4796524e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 150512166945608990, guid: a0a8ffc116b430b4b8e5d38a4796524e, type: 3}
+      propertyPath: m_Name
+      value: GamepadCursor
+      objectReference: {fileID: 0}
+    - target: {fileID: 150512166945608991, guid: a0a8ffc116b430b4b8e5d38a4796524e, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 208971495}
+    - target: {fileID: 150512166945608991, guid: a0a8ffc116b430b4b8e5d38a4796524e, type: 3}
+      propertyPath: m_UIInputModule
+      value: 
+      objectReference: {fileID: 422495315}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a0a8ffc116b430b4b8e5d38a4796524e, type: 3}
 --- !u!1 &1363418470
 GameObject:
   m_ObjectHideFlags: 0
@@ -6394,7 +6475,6 @@ MonoBehaviour:
   button5: {fileID: 850555199}
   button6: {fileID: 1430970391}
   button7: {fileID: 173173574}
-  button8: {fileID: 0}
   objs: []
 --- !u!4 &2092573293
 Transform:

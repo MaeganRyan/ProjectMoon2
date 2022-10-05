@@ -1,0 +1,85 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6745447825857715862
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6745447825857715861}
+  - component: {fileID: 6745447825857715860}
+  m_Layer: 0
+  m_Name: Crafting Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6745447825857715861
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6745447825857715862}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 537.373, y: 182.88062, z: 0.09324348}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6745447825857715860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6745447825857715862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ac29f06a6e96974e844c583ea10278f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  customCursor: {fileID: 0}
+  recipeBook: {fileID: 0}
+  craftingSlots:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  itemList:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  recipes:
+  - woodcrystalbotbot
+  - botcrystalbotnull
+  - scrollpoisonsoul
+  - stonestonestonestone
+  - woodwoodcrystalnull
+  - poisonpoisonpoisonpoison
+  - scrollscrollscrollscroll
+  - MoneyMoneyMoneyMoney
+  recipeResults:
+  - {fileID: 122706784454688805, guid: 25bc1d9e67542d447b3efb3375d70292, type: 3}
+  - {fileID: 2223355346301158647, guid: b1005ec2d8e8ab54197256124b2b2d80, type: 3}
+  - {fileID: 7046254184375399633, guid: 9530d9debffa78f4ebe1d70e64596e92, type: 3}
+  - {fileID: 8154456590654202498, guid: 365af544268cc3e4d97af7dfef21042b, type: 3}
+  - {fileID: 5606052911125677534, guid: 72cfb113e28796741aa9c13943625d08, type: 3}
+  - {fileID: 8644913811800649258, guid: 5b625d1d27c3ba04dadd401fcdc83cfc, type: 3}
+  - {fileID: 8976151425834992939, guid: aaf77be74dfd4854a8b799a42856e5d2, type: 3}
+  - {fileID: 6067795439257623627, guid: c83f94f583de7f24e84ce8fa4914f864, type: 3}
+  correctRecipe: {fileID: 0}
+  resultSlot: {fileID: 0}
+  button: {fileID: 0}
+  cursorSprite: {fileID: 21300000, guid: 042d7b59dac3b254caf51265a72ac222, type: 3}
+  wood: {fileID: 0}
+  loseText: {fileID: 0}
+  audio: {fileID: 0}
+  correctSound: {fileID: 8300000, guid: 71bfe58f6e8962143adba0baa78a1b55, type: 3}
+  incorrectSound: {fileID: 8300000, guid: 9aec7e009c4972746936c1efed2f3116, type: 3}

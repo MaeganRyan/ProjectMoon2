@@ -324,10 +324,10 @@
 -r:"C:/Program Files/Unity/Hub/Editor/2021.3.8f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Xml.XPath.XDocument.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.3.8f1/Editor/Data/NetStandard/Extensions/2.0.0/System.Runtime.InteropServices.WindowsRuntime.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.3.8f1/Editor/Data/NetStandard/ref/2.1.0/netstandard.dll"
--r:"D:/Unity/ProjectMoon/ProjectMoon2/ProjectMoon/Library/PackageCache/com.unity.analytics@3.6.12/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll"
--r:"D:/Unity/ProjectMoon/ProjectMoon2/ProjectMoon/Library/PackageCache/com.unity.analytics@3.6.12/Unity.Analytics.Editor.dll"
--r:"D:/Unity/ProjectMoon/ProjectMoon2/ProjectMoon/Library/PackageCache/com.unity.analytics@3.6.12/Unity.Analytics.Tracker.dll"
--r:"D:/Unity/ProjectMoon/ProjectMoon2/ProjectMoon/Library/PackageCache/com.unity.nuget.newtonsoft-json@3.0.2/Runtime/Newtonsoft.Json.dll"
+-r:"D:/Users/r-odi/Documents/GitHub/ProjectMoon2/ProjectMoon/Library/PackageCache/com.unity.analytics@3.6.12/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll"
+-r:"D:/Users/r-odi/Documents/GitHub/ProjectMoon2/ProjectMoon/Library/PackageCache/com.unity.analytics@3.6.12/Unity.Analytics.Editor.dll"
+-r:"D:/Users/r-odi/Documents/GitHub/ProjectMoon2/ProjectMoon/Library/PackageCache/com.unity.analytics@3.6.12/Unity.Analytics.Tracker.dll"
+-r:"D:/Users/r-odi/Documents/GitHub/ProjectMoon2/ProjectMoon/Library/PackageCache/com.unity.nuget.newtonsoft-json@3.0.2/Runtime/Newtonsoft.Json.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Analytics.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Purchasing.Common.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.2D.Sprite.Editor.ref.dll"
@@ -362,6 +362,8 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.SpatialTracking.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.XR.LegacyInputHelpers.ref.dll"
+"Assets/Developers/Hyune/CustomerController.cs"
+"Assets/Developers/Hyune/DialogueCaster.cs"
 "Assets/Developers/Hyune/Scripts/AudioManager.cs"
 "Assets/Developers/Hyune/Scripts/Dialogue.cs"
 "Assets/Developers/Hyune/Scripts/DialogueSystem.cs"
@@ -377,7 +379,6 @@
 "Assets/Developers/Rodrigo/Scripts/GameControlScript.cs"
 "Assets/Developers/Rodrigo/Scripts/GamepadCursor.cs"
 "Assets/Developers/Rodrigo/Scripts/ShopControlScript.cs"
-"Assets/DialogueCaster.cs"
 -langversion:9.0
 
 /deterministic

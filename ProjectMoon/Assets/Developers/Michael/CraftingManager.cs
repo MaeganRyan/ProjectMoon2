@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public delegate void OnItemSubmit(int command);
 
 public class CraftingManager : MonoBehaviour
 {
+
     public static event OnItemSubmit OnItemSubmit;
 
     public static CraftingManager instance;
@@ -97,17 +99,17 @@ public class CraftingManager : MonoBehaviour
             recipeBook.SetActive(false);
         }
 
-        if(Input.GetMouseButtonUp(0))
+        if(Input.GetMouseButtonUp(0) || Gamepad.current.aButton.wasPressedThisFrame)
         {
             if(currentItem != null)
             {
-                customCursor.gameObject.SetActive(false);
+                //customCursor.gameObject.SetActive(false);
                 Slot nearestSlot = null;
                 float shortestDistance = float.MaxValue;
 
                 foreach(Slot slot in craftingSlots)
                 {
-                    float dist = Vector2.Distance(Input.mousePosition, slot.transform.position);
+                    float dist = Vector2.Distance(GameObject.Find("CustomCursor").transform.position, /*Input.mousePosition,*/ slot.transform.position);
 
                     if(dist < shortestDistance)
                     {
@@ -125,6 +127,7 @@ public class CraftingManager : MonoBehaviour
                 customCursor.GetComponent<Image>().sprite = cursorSprite;
 
                 CheckForCreatedRecipes();
+                
             }
         }
     }
@@ -190,6 +193,18 @@ public class CraftingManager : MonoBehaviour
             ShopControlScript.poisonAmount ++;
             Debug.Log(ShopControlScript.poisonAmount);
         }
+
+        if (slot.item.tag == "Stone")
+        {
+            ShopControlScript.poisonAmount ++;
+            Debug.Log(ShopControlScript.poisonAmount);
+        }
+
+        if (slot.item.tag == "Soul")
+        {
+            ShopControlScript.poisonAmount ++;
+            Debug.Log(ShopControlScript.poisonAmount);
+        }
         slot.item = null;
         itemList[slot.index] = null;
         slot.gameObject.SetActive(false);
@@ -204,6 +219,7 @@ public class CraftingManager : MonoBehaviour
             currentItem = item;
             customCursor.gameObject.SetActive(true);
             customCursor.sprite = currentItem.GetComponent<Image>().sprite;
+            Debug.Log("Is this working");
         }
 
         if (item.tag == "Wood")
@@ -241,11 +257,22 @@ public class CraftingManager : MonoBehaviour
             Debug.Log(ShopControlScript.poisonAmount);
         }
 
+        if (item.tag == "Stone")
+        {
+            Debug.Log("Stone!");
+            ShopControlScript.stoneAmount --;
+            Debug.Log(ShopControlScript.stoneAmount);
+        }
+
+        if (item.tag == "Soul")
+        {
+            Debug.Log("Soul!");
+            ShopControlScript.soulAmount --;
+            Debug.Log(ShopControlScript.soulAmount);
+        }
+
 
     }
-
-   
-
 
     public void WinButton ()
     {

@@ -618,12 +618,12 @@
                 },
                 {
                     "name": "",
-                    "id": "9e92bb26-7e3b-4ec4-b06b-3c8f8e498ddc",
-                    "path": "*/{Submit}",
+                    "id": "9449cf88-fcb2-406c-9432-e124946099f0",
+                    "path": "<Mouse>/position",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard&Mouse;Gamepad;Touch;Joystick;XR",
-                    "action": "Submit",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Navigate",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
