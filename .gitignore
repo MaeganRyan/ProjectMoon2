@@ -2,13 +2,13 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/master/Unity.gitignore
 #
-/ProjectMoon/[Ll]ibrary/
-/ProjectMoon/[Tt]emp/
-/ProjectMoon/[Oo]bj/
-/ProjectMoon/[Bb]uild/
-/ProjectMoon/[Bb]uilds/
-/ProjectMoon/[Ll]ogs/
-/ProjectMoon/[Mm]emoryCaptures/
+ProjectMoon/[Ll]ibrary/
+ProjectMoon/[Tt]emp/
+ProjectMoon/[Oo]bj/
+ProjectMoon/[Bb]uild/
+ProjectMoon/[Bb]uilds/
+ProjectMoon/[Ll]ogs/
+ProjectMoon/[Mm]emoryCaptures/
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Aa]ssets/**/*.meta
