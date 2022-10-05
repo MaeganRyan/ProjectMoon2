@@ -3896,33 +3896,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!1 &1375621948 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7807000010918787457, guid: 86f325a7e0975d241882ce397ac74060, type: 3}
-  m_PrefabInstance: {fileID: 1333210607}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1375621952
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1375621948}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be90856305bc67d428f2179e5943ef27, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  customers:
-  - {fileID: 11400000, guid: 02dd1912b526bb74e8ec336e3dd5614c, type: 2}
-  - {fileID: 11400000, guid: 4df3d3943146b7a4b88ca1759b4ce379, type: 2}
-  - {fileID: 11400000, guid: 46c68962c3128e24b8b589622760be16, type: 2}
-  - {fileID: 11400000, guid: a861b68dba8253d4f8b8d9d4ff00b450, type: 2}
-  - {fileID: 11400000, guid: ef3605510367b034496644687d5899d7, type: 2}
-  - {fileID: 11400000, guid: 48d7f306b89b90d4194c5f765e13e93f, type: 2}
-  - {fileID: 11400000, guid: bccdfd88a10ba7544944d949d5a58f00, type: 2}
-  landlord: {fileID: 11400000, guid: 99003fe26a73afa4888abcb3926b40dd, type: 2}
-  currentCustomer: {fileID: 0}
 --- !u!1 &1383203632
 GameObject:
   m_ObjectHideFlags: 0
